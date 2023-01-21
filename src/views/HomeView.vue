@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="home-view">
+    <h1 class="home-view__title">Weather forecast</h1>
+    <p class="home-view__subtitle">Next 7 days</p>
+    <weather-list />
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class HomeView extends Vue {}
+<script setup lang="ts">
+import WeatherList from "@/components/WeatherList.vue";
 </script>
+
+<style lang="scss">
+.home-view {
+  &__title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    color: #5887ff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+  }
+}
+</style>
